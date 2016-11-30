@@ -37,13 +37,13 @@ public class HtmlMail {
 	private Properties props = new Properties();
 	private String host= "smtp.office365.com";
 	private String protocol= "smtp";
-	private String user="crm@gruporandazzo.com.ar";
-	private String password="Randazzo123";	
-	private String from="crm@gruporandazzo.com.ar";//DESDE
-	private String addressCC="crm@gruporandazzo.com.ar";//Con Copia - CC
-	private String direccionRespuesta="jcasal@randazzo.com.ar";	//Direccion de Respuesta
+	private String user="";
+	private String password="";	
+	private String from="";//DESDE
+	private String addressCC="";//Con Copia - CC
+	private String direccionRespuesta="";	//Direccion de Respuesta
 	private String content,to;
-	private String subject="Oferta Licitación - Plan de Ahorro Chevrolet"; //ASUNTO DEL EMAIL
+	private String subject="Oferta LicitaciÃ³n - Plan de Ahorro Chevrolet"; //ASUNTO DEL EMAIL
 	
 	private String[] mes={"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};//calendario
 	/**
@@ -64,7 +64,7 @@ public class HtmlMail {
 	props.put("mail.smtp.starttls.enable", "true");
 	props.put("mail.smtp.port",587);//25
 	props.put("smtp.office365.com",this.user);	
-	props.put("mail.smtp.user", "crm");
+	props.put("mail.smtp.user", "");
 	props.put("mail.smtp.auth", "true");
 	props.setProperty("mail.transport.protocol", this.protocol);
 	props.setProperty("mail.password", password); 
@@ -130,7 +130,7 @@ public class HtmlMail {
 	}
 	}
 		/**
-		* Añade el contenido base al multipart
+		* AÃ±ade el contenido base al multipart
 		* @throws Exception Excepcion levantada en caso de error
 		*/
 		public void addContentToMultipart() throws Exception
@@ -144,7 +144,7 @@ public class HtmlMail {
 		}
 		// -----
 		/**
-		* Añade el contenido base al multipart
+		* AÃ±ade el contenido base al multipart
 		* @param htmlText contenido html que se muestra en el mensaje de correo
 		* @throws Exception Excepcion levantada en caso de error
 		*/
@@ -158,7 +158,7 @@ public class HtmlMail {
 		}
 		// -----
 		/**
-		* Añade al mensaje un cid:name utilizado para guardar las imagenes referenciadas en el HTML de la forma <img src=cid:name />
+		* AÃ±ade al mensaje un cid:name utilizado para guardar las imagenes referenciadas en el HTML de la forma <img src=cid:name />
 		* @param cidname identificador que se le da a la imagen. suele ser un string generado aleatoriamente.
 		* @param pathname ruta del fichero que almacena la imagen
 		 * @throws MessagingException 
@@ -176,7 +176,7 @@ public class HtmlMail {
 		}
 		// ----
 		/**
-		* Añade un attachement al mensaje de email
+		* AÃ±ade un attachement al mensaje de email
 		* @param pathname ruta del fichero
 		* @throws Exception excepcion levantada en caso de error
 		*/
